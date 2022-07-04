@@ -1,7 +1,7 @@
 {
     "name": "vin/testpack",
     "repositories": {
-        "type ": "vcs ",
+       
         "url" : "https://github.com/codePorch/testpack.git"
     },
     "description": "test package",
