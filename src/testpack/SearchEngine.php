@@ -18,26 +18,22 @@ private $googleApiUrl = 'https://api.serpwow.com/search';
 	public function search($queryArr = [])
 	{
 		$querystring = implode(", ", $queryArr);
-		return $this->getResult($querystring);
+		return $this->format_result($this->getResult($querystring));
 		
 	}
 	
-	private function getResult($querystr){
-		
+	private function getResult($querystr){	
 		
 
 				$queryString = http_build_query([
-'api_key' => $this->googleApiKey,
-  'q' => $querystr,
-  'engine' => 'google',
- 'flatten_results' => 'true',
-  'num' => '10',
-  'max_page' => '5',
- 'google_domain'=>$this->engin,
-]);
-
-
-
+						'api_key' => $this->googleApiKey,
+						  'q' => $querystr,
+						  'engine' => 'google',
+						 'flatten_results' => 'true',
+						  'num' => '10',
+						  'max_page' => '5',
+						 'google_domain'=>$this->engin,
+						]);
 
 
 		
@@ -65,6 +61,38 @@ private $googleApiUrl = 'https://api.serpwow.com/search';
 		}
 
 		return json_decode($response, true);
+	}
+	
+	private function  format_result($results)
+	{
+		$search_parameters=$results['search_parameters']['q'];
+		$items =[];
+		$position=1;
+		
+		foreach ($results['organic_results'] as $number => $result) 
+		{
+
+
+		$link=(array_key_exists("link", $result)) ? $result['link'] : "";
+		$title=(array_key_exists("title", $result)) ? $result['title'] : "";
+		$description=(array_key_exists("snippet", $result)) ? $result['snippet'] : "";
+		$promoted=($result['type']=="ad")?true:false;
+
+			
+				$res = array(
+					"keyword " => $search_parameters,
+					"ranking " => $position,
+					"url" => $link,
+					"title" => $title,
+					"description "=>$description,
+					"promoted "=>$promoted
+				);
+			
+			
+		  $position++;
+		  $items[]=$res;
+		}
+		return $items;
 	}
 }
 
