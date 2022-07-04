@@ -1,9 +1,5 @@
 {
-    "name": "vin/testpack",
-    "repositories": {
-       
-        "url" : "https://github.com/codePorch/testpack.git"
-    },
+    "name": "vin/testpack",    
     "description": "test package",
     "type": "library",
     "license": "MIT",
