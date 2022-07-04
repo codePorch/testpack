@@ -1,5 +1,9 @@
 {
     "name": "vin/testpack",
+    "repositories": {
+        "type ": "vcs ",
+        "url" : "https://github.com/codePorch/testpack.git"
+    }
     "description": "test package",
     "type": "library",
     "license": "MIT",
@@ -17,7 +21,7 @@
     "require": {},
     "config": {
         "platform": {
-            "php": "7.2"
+            "php": ">=7.2"
         }
     }
 }
