@@ -1,6 +1,18 @@
 {
     
+   
+    {
     "name": "vin/testpack",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/codePorch/testpack"
+        }
+    ],
+    "require": {
+        "vin/testpack": "dev-master"
+    }
+},
     "description": "test package",
     "type": "library",
     "license": "MIT",
