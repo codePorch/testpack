@@ -15,7 +15,7 @@
             "email": "vinsah@gmail.com"
         }
     ],
-    "require": {"monolog/monolog":"1.0.*"},
+    "require": {},
     "config": {
         "platform": {
             "php": ">=7.2"
