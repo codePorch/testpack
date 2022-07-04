@@ -35,5 +35,6 @@ $promoted=$result['type'];
   $position++;
   $items->append($res);
 }
-print_r(json_encode($items));
+header('Content-Type: application/json');
+print_r(json_encode($items,JSON_PRETTY_PRINT));
 ?>
