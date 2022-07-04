@@ -1,5 +1,11 @@
 {
-    "name": "vin/testpack",    
+    
+    {
+    "name": "vin/testpack",
+    "require": {
+        "monolog/monolog": "1.0.*"
+    }
+},
     "description": "test package",
     "type": "library",
     "license": "MIT",
@@ -20,4 +26,7 @@
             "php": ">=7.2"
         }
     }
+,
+ "version": "1.0.0"
+
 }
