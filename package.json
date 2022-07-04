@@ -1,0 +1,6 @@
+{
+	"name": "vin/testpack"
+	“require”: {
+	     “monolog/monolog”:”1.0.*”
+          }
+}
