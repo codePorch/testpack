@@ -1,0 +1,23 @@
+{
+    "name": "vin/testpack",
+    "description": "test package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vin\\Testpack\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "vineetha",
+            "email": "vinsah@gmail.com"
+        }
+    ],
+    "require": {},
+    "config": {
+        "platform": {
+            "php": "7.2"
+        }
+    }
+}
